@@ -9,10 +9,13 @@ jobs:
   sample-test:
     runs-on: self-hosted
     steps:
-      - name: checkout repository
+
+      - name: fixing directory
         run: |
           mkdir sample-repo
           cd sample-repo
+        
+      - name: checkout repository
         uses: actions/checkout@v4
 
       - name: Installing python env
