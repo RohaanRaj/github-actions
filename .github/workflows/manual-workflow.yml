@@ -16,10 +16,6 @@ jobs:
   manual-workflow:
     runs-on: self-hosted
     steps:
-      - name: Setting up Python environment
-        uses: actions/python@v6
-        with:
-          python-version: '3.13'
 
       - name: Adding Both values
         run: |
