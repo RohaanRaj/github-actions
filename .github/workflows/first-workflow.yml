@@ -3,17 +3,12 @@ on:
   push:
     branches: ["main"]
 
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   sample-test:
     runs-on: self-hosted
     steps:
-
-      - name: fixing directory
-        run: |
-          mkdir sample-repo
-          cd sample-repo
         
       - name: checkout repository
         uses: actions/checkout@v4
