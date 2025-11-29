@@ -9,8 +9,11 @@ jobs:
   sample-test:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: Installing python env
+        uses: actions/setup-python@v5
 
       - name: Running the python script
         run: python3 scripts/run.py
