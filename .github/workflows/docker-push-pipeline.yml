@@ -1,0 +1,30 @@
+name: docker-ci-pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      docker-tag:
+        description: "Enter the tag of image to use"
+        required: true
+
+
+jobs:
+  docker-ci-pipeline:
+    runs-on: self-hosted
+    steps:
+      - name: Checking out the code
+        uses: actions/checkout@v4
+
+      - name: Logging into docker
+        uses: docker/login-action@v3 
+        with:
+          username: ${{vars.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+
+      - name: Building and Pushing the Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./python-docker-example
+          push: true
+          tags: ${{vars.DOCKER_USERNAME}}/automated-python:${{inputs.docker-tag}}
+
