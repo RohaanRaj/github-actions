@@ -4,7 +4,7 @@ import os
 print(os.name)
 print(socket.gethostname())
 
-path = "/config/message.txt"
+path = "/home/ubuntu/actions-runner/_work/github-actions/github-actions/config/message.txt"
 
 with open (path, "r") as file:
     content = file.read()
