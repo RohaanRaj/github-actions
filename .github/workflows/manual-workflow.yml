@@ -1,0 +1,31 @@
+name: Testing Manual Input
+
+on :
+  worker_dispatch:
+    inputs:
+      variable1:
+        description: "Enter a value"
+        default: 0
+        required: true
+      variable2:
+        description: "Enter a value"
+        default: 0
+        required: false
+        
+jobs:
+  manual-workflow:
+    runs-on: self-hosted
+    steps:
+      - name: Setting up Python environment
+        uses: actions/python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Adding Both values
+        run: |
+          echo "$((${{inputs.variable1}} + ${{inputs.variable2}}))"
+
+
+        
+
+
