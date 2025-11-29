@@ -1,0 +1,2 @@
+This is a random text file
+generated to practice CI/CD

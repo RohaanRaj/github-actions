@@ -10,8 +10,11 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python
 
-      - name: Printing
-        run: |
-          echo "Hello world!"
-          echo "This is running on self hosted Runner"
+      - name: Running the python script
+        run: python3 scripts/run.py
+
+      - name: Confirming completion
+        run: echo "Successully completed execution"
+
