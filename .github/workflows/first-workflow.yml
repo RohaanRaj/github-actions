@@ -7,9 +7,11 @@ on:
 
 jobs:
   sample-test:
-    runs-on: ubuntu-latest
+    runs-on: aws-hosted-runner
     steps:
       - uses: actions/checkout@v4
 
       - name: Printing
-        run: echo "Hello world!"
+        run: |
+          echo "Hello world!"
+          echo "This is running on self hosted Runner"
