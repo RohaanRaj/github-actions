@@ -1,7 +1,7 @@
 name: Testing Manual Input
 
 on :
-  worker_dispatch:
+  workflow_dispatch:
     inputs:
       variable1:
         description: "Enter a value"
